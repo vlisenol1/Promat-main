@@ -14,3 +14,8 @@ class Constant {
 }
 
 const kDefaultPadding = 20.0;
+const Color kTopColor = Color.fromARGB(255, 67, 18, 181);
+const Color kBottomColor = Color.fromARGB(255, 137, 128, 221);
+const Color kContourColor = Color.fromARGB(255, 189, 210, 255);
+const int kWaveLength = 280;
+const Size kSize = Size(200, 200);
