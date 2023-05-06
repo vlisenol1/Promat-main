@@ -1,8 +1,8 @@
 import 'package:promat/model/product.dart';
 
-class HomeProductsModel {
+class CalorieAndWaterPart {
   String categoryTitle;
   List<Product> products;
 
-  HomeProductsModel({required this.categoryTitle, required this.products});
+  CalorieAndWaterPart({required this.categoryTitle, required this.products});
 }

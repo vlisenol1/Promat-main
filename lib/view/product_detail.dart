@@ -22,7 +22,7 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
       body: Stack(
         children: [
           ListView(
-            children: [image(), title(), colors(context), price2(), button()],
+            children: [image(), title(), colors(context), button()],
           ),
           appbar()
         ],
@@ -46,31 +46,6 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
     );
   }
 
-  Padding price2() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Text(
-            "Fiyat",
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-          ),
-          price()
-        ],
-      ),
-    );
-  }
-
-  Text price() => Text(
-        "${widget.product.price} ₺",
-        style: Theme.of(context)
-            .textTheme
-            .headline5!
-            .copyWith(fontWeight: FontWeight.bold),
-      );
-
   Padding title() {
     return Padding(
       padding: [20, 40, 0, 0].paddingLTRB,
@@ -93,7 +68,7 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
               onPressed: () => Navigator.pop(context),
               icon: const Icon(
                 Icons.arrow_back,
-                color: Constant.black,
+                color: Color.fromARGB(255, 145, 148, 162),
                 size: 32,
               ),
             ),
@@ -126,10 +101,6 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
         ),
         const SizedBox(
           height: 15,
-        ),
-        Text(
-          "Stok Adedi : 25",
-          style: _subTitle,
         ),
       ]),
     );

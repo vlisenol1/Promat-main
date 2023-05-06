@@ -83,7 +83,7 @@ class _HomeState extends ConsumerState<Home> {
   }
 
   // ignore: non_constant_identifier_names
-  Widget HomeProductCategories(HomeProductsModel model) {
+  Widget HomeProductCategories(CalorieAndWaterPart model) {
     return Column(
       children: [
         Padding(
@@ -97,13 +97,6 @@ class _HomeState extends ConsumerState<Home> {
                 style:
                     const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
               ),
-              model.categoryTitle == ''
-                  ? const SizedBox()
-                  : const Text(
-                      'Bakiyeniz : 75 ₺',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
-                    ),
             ],
           ),
         ),
@@ -111,15 +104,15 @@ class _HomeState extends ConsumerState<Home> {
           height: 2,
         ),
         SizedBox(
-          height: 250,
+          height: 230,
           child: ListView.separated(
             separatorBuilder: (context, index) {
               return const SizedBox(
-                width: 1,
+                width: 5,
               );
             },
             padding: const EdgeInsets.only(
-              left: 20.0,
+              left: 30.0,
               right: 20,
             ),
             itemCount: model.products.length,

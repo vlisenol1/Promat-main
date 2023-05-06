@@ -12,3 +12,5 @@ class Constant {
   static const Color gray = Color(0xffCBCBD4);
   static const Color blue = Color.fromARGB(255, 48, 48, 243);
 }
+
+const kDefaultPadding = 20.0;

@@ -31,6 +31,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           ),
         ],
       ),
+      leading: Transform.translate(
+        offset: Offset(kDefaultPadding * 0.5, 0),
+        child: IconButton(
+          icon: Image.asset('assets/images/image_hand.png'),
+          onPressed: () {},
+        ),
+      ),
     );
   }
 }

@@ -25,14 +25,14 @@ class DrawerItem extends StatelessWidget {
             Icon(
               icon,
               size: 15,
-              color: Colors.white,
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
             const SizedBox(
               width: 15,
             ),
             Text(
               name,
-              style: const TextStyle(fontSize: 17, color: Colors.white),
+              style: const TextStyle(fontSize: 18, color: Colors.white),
             )
           ],
         ),
