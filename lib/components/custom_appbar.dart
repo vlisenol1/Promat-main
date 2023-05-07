@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text(
-            "Hello, Veli",
+            "Hello, Frank",
             style: TextStyle(
                 letterSpacing: 2,
                 color: Color.fromARGB(132, 26, 17, 52),

@@ -22,7 +22,7 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
       body: Stack(
         children: [
           ListView(
-            children: [image(), title(), colors(context), button()],
+            children: [image(), title(), button()],
           ),
           appbar()
         ],
@@ -41,7 +41,7 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
                 builder: (context) => const Cart(),
               ));
         },
-        text: ("Sepete Ekle"),
+        text: (" "),
       ),
     );
   }
@@ -88,16 +88,8 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
         Padding(
           padding: [20, 20, 20, 0].paddingLTRB,
         ),
-        Text(
-          widget.product.descTitle,
-          style: _subTitle,
-        ),
         const SizedBox(
           height: 8,
-        ),
-        Text(
-          widget.product.descDetail,
-          style: Theme.of(context).textTheme.caption,
         ),
         const SizedBox(
           height: 15,

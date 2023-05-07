@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(scaffoldBackgroundColor: Constant.white),
       title: 'Flutter OTP Verification',
       debugShowCheckedModeBanner: false,
-      home: const Exercise(title: 'Flutter Canvas Animation'),
+      home: const Welcome(),
     );
   }
 }

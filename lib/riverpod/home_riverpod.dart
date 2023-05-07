@@ -23,18 +23,12 @@ class HomeRiverpod extends ChangeNotifier {
     Product(
       image: "assets/images/fire.png",
       title: "Calories Burned ",
-      descTitle: "Sade Patates Cipsi",
-      descDetail: "Ruffles sade patates cipsinin eşsiz lezzetini tadın.",
-      colors: [Colors.cyan, Colors.deepPurple, Colors.green],
       isSaved: false,
     ),
     Product(
       image: "assets/images/waterdrop.png",
       title: "Hydration",
-      descTitle: "Eti Çikolatalı Gofret",
       isSaved: true,
-      descDetail: "Kendinizi küçük bir çikolata ile mutlu edebilirsiniz.",
-      colors: [Colors.cyan, Colors.deepPurple, Colors.green],
     ),
   ]);
 }
