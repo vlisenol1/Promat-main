@@ -1,3 +1,4 @@
+import 'package:promat/components/custom_appbar.dart';
 import 'package:vector_math/vector_math.dart' as vector;
 import 'package:flutter/material.dart';
 import 'package:promat/constant/constant.dart';
@@ -7,6 +8,7 @@ import 'dart:math' as math;
 class WaterBottle extends StatefulWidget {
   const WaterBottle({Key? key, required this.title}) : super(key: key);
   final String title;
+
   @override
   _WaterBottleState createState() => _WaterBottleState();
 }
@@ -15,6 +17,7 @@ class _WaterBottleState extends State<WaterBottle>
     with TickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> animation;
+  int counter = 0;
   @override
   void initState() {
     super.initState();
@@ -35,57 +38,132 @@ class _WaterBottleState extends State<WaterBottle>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        body: Container(
-            color: Color.fromARGB(255, 243, 242, 242),
-            child: AnimatedBuilder(
-              animation: animationController,
-              builder: (context, child) => Stack(
-                children: [
-                  Positioned(
-                    top: size.height / 2,
-                    left: size.width / 2,
-                    child: ClipPath(
-                      clipper: CircleClipper(),
-                      child: CustomPaint(
-                        size: kSize,
-                        painter: WavePainter(
-                            animationController: animationController,
-                            isRightDirection: true),
+        appBar: AppBar(
+          title: Text(
+            "Hydration",
+          ),
+        ),
+        body: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "               $counter ml",
+                  style: TextStyle(fontSize: 40),
+                ),
+                CircleAvatar(
+                  child: Image.asset("assets/images/persona.png"),
+                )
+              ],
+            ),
+            Expanded(
+              child: Container(
+                color: Color.fromARGB(255, 249, 249, 249),
+                child: AnimatedBuilder(
+                  animation: animationController,
+                  builder: (context, child) => Stack(
+                    children: [
+                      Positioned(
+                        top: size.height / 2,
+                        left: size.width / 2,
+                        child: ClipPath(
+                          clipper: CircleClipper(),
+                          child: CustomPaint(
+                            size: kSize,
+                            painter: WavePainter(
+                                animationController: animationController,
+                                isRightDirection: true),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Positioned(
-                    top: size.height / 2,
-                    left: size.width / 2,
-                    child: ClipPath(
-                      clipper: CircleClipper(),
-                      child: CustomPaint(
-                        size: kSize,
-                        painter: WavePainter(
-                            animationController: animationController,
-                            isRightDirection: false),
+                      Positioned(
+                        top: size.height / 2,
+                        left: size.width / 2,
+                        child: ClipPath(
+                          clipper: CircleClipper(),
+                          child: CustomPaint(
+                            size: kSize,
+                            painter: WavePainter(
+                                animationController: animationController,
+                                isRightDirection: false),
+                          ),
+                        ),
                       ),
-                    ),
+                      Positioned(
+                        top: size.height / 2,
+                        left: size.width / 2,
+                        child: CustomPaint(
+                          size: kSize,
+                          painter: FlaskPainter(),
+                        ),
+                      ),
+                      Positioned(
+                        top: size.height / 2,
+                        left: size.width / 2,
+                        child: CustomPaint(
+                          size: kSize,
+                          painter: ReflectionPainter(),
+                        ),
+                      ),
+                    ],
                   ),
-                  Positioned(
-                    top: size.height / 2,
-                    left: size.width / 2,
-                    child: CustomPaint(
-                      size: kSize,
-                      painter: FlaskPainter(),
-                    ),
-                  ),
-                  Positioned(
-                    top: size.height / 2,
-                    left: size.width / 2,
-                    child: CustomPaint(
-                      size: kSize,
-                      painter: ReflectionPainter(),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            )));
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color.fromARGB(255, 206, 193, 193)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkResponse(
+                      onTap: () {
+                        setState(() {
+                          counter += 200;
+                        });
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(children: [
+                          Image.asset('assets/images/200ml.png'),
+                          const Text("200 ml")
+                        ]),
+                      ),
+                    ),
+                    InkResponse(
+                      onTap: () {
+                        setState(() {
+                          counter += 300;
+                        });
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Image.asset('assets/images/300ml.png'),
+                      ),
+                    ),
+                    InkResponse(
+                      onTap: () {
+                        setState(() {
+                          counter += 500;
+                        });
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Image.asset('assets/images/500ml.png'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ));
   }
 }
 

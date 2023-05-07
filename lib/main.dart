@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:promat/_auth/welcome.dart';
 import 'package:promat/constant/constant.dart';
+import 'package:promat/view/hydration.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(scaffoldBackgroundColor: Constant.white),
       title: 'Flutter OTP Verification',
       debugShowCheckedModeBanner: false,
-      home: const Welcome(),
+      home: const WaterBottle(title: 'Flutter Canvas Animation'),
     );
   }
 }
