@@ -49,8 +49,9 @@ class _WaterBottleState extends State<WaterBottle>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "               $counter ml",
+                  "               $counter mL",
                   style: TextStyle(fontSize: 40),
+                  selectionColor: Color.fromARGB(255, 244, 244, 244),
                 ),
                 CircleAvatar(
                   child: Image.asset("assets/images/persona.png"),
@@ -116,7 +117,7 @@ class _WaterBottleState extends State<WaterBottle>
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 206, 193, 193)),
+                  border: Border.all(color: Color.fromARGB(255, 165, 212, 241)),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -144,7 +145,10 @@ class _WaterBottleState extends State<WaterBottle>
                       },
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
-                        child: Image.asset('assets/images/300ml.png'),
+                        child: Column(children: [
+                          Image.asset('assets/images/300ml.png'),
+                          const Text("300 ml")
+                        ]),
                       ),
                     ),
                     InkResponse(
@@ -155,7 +159,10 @@ class _WaterBottleState extends State<WaterBottle>
                       },
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
-                        child: Image.asset('assets/images/500ml.png'),
+                        child: Column(children: [
+                          Image.asset('assets/images/500ml.png'),
+                          const Text("500 ml")
+                        ]),
                       ),
                     ),
                   ],
